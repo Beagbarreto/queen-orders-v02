@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Breakfast from './components/breakfast.jsx';
+import Lunch from './components/lunch.jsx';
+import AddItem from './components/addItems.jsx';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import 'materialize-css/dist/css/materialize.min.css';
+import './styles/App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class='App'>
+      <nav>
+        <div class="nav-wrapper">
+          <h3 class="center-align">Burguer Queen</h3>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col s6">
+            <Router>
+              <div>
+                <div>
+                  <Link to="/"><a class="waves-effect waves-light btn">Desayuno</a></Link>
+                  <Link to="/menus"><a class="waves-effect waves-light btn">Almuerzo y Cena</a></Link>
+                </div>
+                <Switch>
+                  <Route path="/menus">
+                    <Menus />
+                  </Route>
+                  <Route path="/">
+                    <Desayuno />
+                  </Route>
+                </Switch>
+              </div>
+            </Router>
+          </div>
+          <div class="col s6">< AddItem /></div>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+function Desayuno() {
+  return < Breakfast />;
+}
+
+function Menus() {
+  return < Lunch />;
+}
