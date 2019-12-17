@@ -8,6 +8,7 @@
 {
   "id": 2,
   "item": "Hamburguesa doble",
+  "type": ["res", "pollo", "vegetariana"],
   "price": 15
 },
 {

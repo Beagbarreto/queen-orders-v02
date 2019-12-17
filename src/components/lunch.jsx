@@ -17,10 +17,9 @@ class Lunch extends Component {
    return(
      <div>
        <h5>Almuerzo y Cena</h5>
-       <div>
-       <a class="waves-effect waves-light btn-small">Button</a>
+       <div class='left-align'>
          {LunchData.map((lunchDetail, index) => {
-           return  <a class="waves-effect waves-light btn-small">{lunchDetail.item}</a>
+           return  <ul><a class="waves-effect waves-light btn-small">{lunchDetail.item}</a></ul>
          })}
        </div>
      </div>

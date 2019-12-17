@@ -27,10 +27,9 @@ class Breakfast extends Component {
    return(
      <div>
        <h5>Desayunos</h5>
-       <div>
-       <a class="waves-effect waves-light btn-small">Button</a>
+       <div class='left-align'>
          {PostData.map((postDetail, index) => {
-           return  <a class="waves-effect waves-light btn-small">{postDetail.item}</a>
+           return  <ul><a class="waves-effect waves-light btn-small">{postDetail.item}</a></ul>
          })}
        </div>
      </div>
