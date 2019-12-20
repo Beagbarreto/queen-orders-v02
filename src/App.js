@@ -3,7 +3,7 @@ import TakeOrder from './components/TakeOrder.jsx';
 import Login from './auth/login.jsx';
 import Home from './components/home.jsx';
 import Orders from './components/order.jsx';
-import AddItem from './components/addItems.jsx';
+import CurrentOrder from './components/currentOrder.jsx';
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,17 +37,17 @@ function App() {
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/orders'} className="nav-link">Orders</Link></li>
             <li><Link to={'/login'} className="nav-link">Login</Link></li>
             <li><Link to={'/takeOrder'} className="nav-link">Take Orders</Link></li>
+            <li><Link to={'/orders'} className="nav-link">Orders</Link></li>
           </ul>
           </nav>
           <hr />
           <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/orders' component={Orders} />
               <Route path='/login' component={Login} />
               <Route path='/takeOrder' component={TakeOrder} />
+              <Route path='/orders' component={Orders} />
           </Switch>
         </div>
       </Router>

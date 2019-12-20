@@ -4,7 +4,7 @@ import React from 'react';
 function Orders(){
   return(
     <div>
-      <h1>Onders will be appearing here</h1>
+      <h1>Pending and completed orders will render here</h1>
     </div>
   )
 }

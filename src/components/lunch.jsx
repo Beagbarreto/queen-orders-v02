@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
-import LunchData from '../data/lunch.json';
+import PostData from '../data/itemsList.json';
+import SingleItem from './singleItem.jsx';
 import 'materialize-css/dist/css/materialize.min.css';
 import axios from 'axios';
 import '../styles/App.css';
 
-class Lunch extends Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     item: '',
-     price: ''
-   }
- }
+const Lunch = () => {
 
- render() {
-   return(
-     <div>
-       <h5>Almuerzo y Cena</h5>
-       <div class='left-align'>
-         {LunchData.map((lunchDetail, index) => {
-           return  <ul><a class="waves-effect waves-light btn-small">{lunchDetail.item}</a></ul>
-         })}
-       </div>
+ const lunchMenu = PostData.filter(postDetail => postDetail['menuTime'] === 'afternoon');
+ return(
+   <div>
+     <h5>Almuerzo y Cena</h5>
+     <div class='left-align'>
+      {lunchMenu.map((unit, index) => {
+       return  <ul><a class="waves-effect waves-light btn-small">{unit.menuItem}</a></ul>
+      })}
      </div>
-   )
- }
+   </div>
+ )
 };
 
 export default Lunch;

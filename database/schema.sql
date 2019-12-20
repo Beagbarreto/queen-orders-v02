@@ -18,11 +18,10 @@ INSERT INTO breakfast(item, price) VALUES ('juego natural', '$7.00');
 CREATE TABLE lunch(
   itemID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   item varchar(30) NOT NULL,
-  type varchar(30) NOT NULL,
   price int(5)
 );
 
-INSERT INTO lunch(item, price, type)
+INSERT INTO lunch(item, price)
 VALUES ('Hamburguesa simple', '$10.00');
 
 CREATE TABLE orders(
@@ -38,3 +37,16 @@ CREATE TABLE orders(
   FOREIGN KEY (itemID) REFERENCES lunch(itemID),
   FOREIGN KEY (itemID) REFERENCES breakfast(itemID)
 );
+
+CREATE TABLE users(
+  userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  role varchar(60) NOT NULL,
+  nickname varchar(60) NOT NULL,
+  fullname varchar(60) NOT NULL,
+  password varchar(60) NOT NULL
+)
+
+INSERT INTO users(role, nickname, fullname, password)
+VALUES ('manager', 'Chris', 'Christina Gilluly', 'abc123');
+INSERT INTO users(role, nickname, fullname, password)
+VALUES ('server', 'Roy', 'Roy Haylock', 'delrio');
