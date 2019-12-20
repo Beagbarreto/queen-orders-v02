@@ -6,4 +6,6 @@ In the project directory, you can run:
 
 ### Burger Queen
 
-Restaurant order handler app
+Restaurant order handler app, built on React, React Hooks, React Router, Materialize and Axios 
+It currently has the format for a login, though authentication hasnt' been setup
+It displays menus, it's in the process of managing orders
